@@ -27,7 +27,7 @@ xhr.onreadystatechange = function() {
     // innerText does not let the attacker inject HTML elements.
     var my_JSON_object = JSON.parse(xhr.responseText);
     console.log(my_JSON_object);
-    console.log(my_JSON_object.products[0]);
+    console.log(my_JSON_object.products[0].name);
   }
 }
 xhr.send();
