@@ -14,10 +14,17 @@
 //     }
 // }
 
-   var request = new XMLHttpRequest();
-   request.open("GET", "products.json", false);
-   request.send(null);
-   var my_JSON_object = JSON.parse(request.responseText);
+   // var request = new XMLHttpRequest();
+   // request.open("GET", "products.json", false);
+   // request.send(null);
+   // var my_JSON_object = JSON.parse(request.responseText);
+   // console.log(my_JSON_object);
+
+   var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = handleStateChange; // Implemented elsewhere.
+xhr.open("GET", chrome.extension.getURL('/products.json'), true);
+xhr.send();
+   var my_JSON_object = JSON.parse(xhr.responseText);
    console.log(my_JSON_object);
 
 function calculateProduct() {
