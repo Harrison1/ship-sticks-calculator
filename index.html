@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ship Sticks calculator question">
+    <meta name="author" content="Harrison McGuire">
+
+	<title>Ship Sticks Calculator</title>
+	
+    <!-- bootstrap style sheet -->
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' >
+
+    <!-- custom style sheet -->
+    <link rel='stylesheet' href='main.css' >
+
+</head>
+<body>
+<header>
+ <!-- Navigation -->
+ <div class="row hidden-xs hidden-sm hidden-md" id="unscrolled-menu-wrapper" style="display: block;">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="nav navbar-nav pull-right">
+                            <li>
+                                <a class="right-nav" href="http://support.shipsticks.com/customer/en/portal/articles/1970301-becoming-a-partner" target="_blank">Become a partner</a>
+                            </li>
+                            <li>
+                                <p class="right-nav separator">|  </p>
+                            </li>
+                            <li>
+                                <a href="#" class="right-nav">Register</a>
+                            </li>
+                            <li>
+                                <p class="right-nav separator">|  </p>
+                            </li>
+                            <li>
+                                <a href="#" class="right-nav">Login</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <a href="/" id="centered-navbar-brand"><img alt="Logo" id="logo" src="logo.png"></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <ul class="nav navbar-nav navbar-right home-menu">
+                        <li>
+                            <a class='active' href='/'>HOME</a>
+                        </li>
+                        <li>
+                            <a href='#'>ABOUT US</a>
+                        </li>
+                        <li>
+                            <a href='#'>TRACK</a>
+                        </li>
+                        <li>
+                            <a href='#'>HOW IT WORKS</a>
+                        </li>
+                        <li>
+                            <a href='#'>SUPPORT</a>
+                        </li>
+                        <li>
+                            <a class='ship-now' href='#'>SHIP NOW</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-fixed-top navbar-black hidden-lg" id='navbar-menu'>
+        <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class='navbar-header page-scroll'>
+        <button type'button' class='navbar-toggle' data-toggle='collapse' data-target='#bs-example-navbar-collapse'>
+            <span class='sr-only'>Toggle navigation</span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+        </button>
+        <a class='navbar-brand' href='/'><img class='nav-logo' src='text-logo-dark.png' /></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class='collapse navbar-collapse' id='bs-example-navbar-collapse'>
+        <ul class='nav navbar-nav navbar-right'>
+            <li>
+                <a class='active' href='#'>HOME</a>
+            </li>
+            <li>
+                <a href='#'>ABOUT US</a>
+            </li>
+            <li>
+                <a href='#'>TRACK</a>
+            </li>
+            <li>
+                <a href='#'>HOW IT WORKS</a>
+            </li>
+            <li>
+                <a href='#'>SUPPORT</a>
+            </li>
+            <li>
+                <a href='#'>REGISTER</a>
+            </li>
+            <li>
+                <a href='#'>LOGIN</a>
+            </li>
+            <li>
+                <a class='ship-now' href='#'>SHIP NOW</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+</div>
+<!-- /.container-fluid -->
+</nav>
+
+<div class='header-bg'>
+    <div class='container slogan-wrapper'>
+        <h2 class='banner'>Ship Sticks Calculator Challenge</h2>
+    </div>
+    <div class="col-md-12 text-center">
+        <a class="btn btn-primary calculate-btn" href="/" id="ship-now-home">Launch Calculator</a>
+    </div>
+</div>
+
+</header>
+
+<div class='container'>
+    <form id='calculator-form'>
+        <div class='row'>
+            <div class='col-md-6'>
+                <label for='length-input'>Length</label><span class='mandatory'> *</span>
+                <input id='length-input' name='length-input' type='number' class='form-control form-margin' autofocus />
+            </div>
+            <div class='col-md-6'>
+                <label for='width-input'>Width</label><span class='mandatory'> *</span>
+                <input id='width-input' name='width-input' type='number' class='form-control form-margin' />
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-md-6'>
+                <label for='height-input'>Height</label><span class='mandatory'> *</span>
+                <input id='height-input' name='height-input' type='number' class='form-control form-margin' />
+            </div>
+            <div class='col-md-6'>
+                <label for='weight-input'>Weight</label><span class='mandatory'> *</span>
+                <input id='weight-input' name='weight-input' type='number' class='form-control form-margin' />
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class='container'>
+    <div class='row'>
+        <div class='col-md-12 text-center'>
+            <button onclick='calculateProduct()' class="btn btn-primary calculate-btn-full" id="calculate-now-button">Calculate</button>
+        </div>
+    </div>
+</div>
+
+<div class='container'>
+    <div class='row'>
+        <div class='col-md-12 text-center'>
+            <p id='user-length-text'></p>
+            <p id='user-width-text'></p>
+            <p id='user-height-text'></p>
+            <p id='user-weight-text'></p>
+        </div>
+    </div>
+</div>
+
+
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-without-jquery/0.6.1/bootstrap3/bootstrap-without-jquery.min.js'></script>
+<script type='text/javascript' src='main.js'></script>
+<!-- <script type='text/javascript' src='calculator.js'></script>-->
+</body>
+</html>

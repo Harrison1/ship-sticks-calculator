@@ -1,0 +1,4 @@
+ship sticks notes
+
+get array of all possible shipping products
+add up all measurments then pick the one with the lowest sum
