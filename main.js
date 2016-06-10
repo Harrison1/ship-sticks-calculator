@@ -25,7 +25,7 @@ request.open('GET', 'products.json');
 request.onreadystatechange = function() {
 	if ((request.readyState===4) && (request.status===2000)) {
 		var items = JSON.parse(request.response.responseText);
-		console.log(items);
+		console.log(items + "hello world");
 	}
 }
 
