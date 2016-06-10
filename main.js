@@ -25,7 +25,7 @@ xhr.open("GET", "products.json", true);
 xhr.onreadystatechange = function() {
   if (xhr.readyState == 4) {
     // innerText does not let the attacker inject HTML elements.
-    var my_JSON_object = xhr.responseText;
+    var my_JSON_object = JSON.parse(xhr.responseText);
     console.log(my_JSON_object);
   }
 }
