@@ -20,12 +20,16 @@
    // var my_JSON_object = JSON.parse(request.responseText);
    // console.log(my_JSON_object);
 
-   var xhr = new XMLHttpRequest();
-//xhr.onreadystatechange = handleStateChange; // Implemented elsewhere.
-xhr.open("GET", chrome.extension.getURL('/products.json'), true);
+ var xhr = new XMLHttpRequest();
+xhr.open("GET", "http://api.example.com/data.json", true);
+xhr.onreadystatechange = function() {
+  if (xhr.readyState == 4) {
+    // innerText does not let the attacker inject HTML elements.
+    var my_JSON_object = xhr.responseText;
+    console.log(my_JSON_object);
+  }
+}
 xhr.send();
-   var my_JSON_object = JSON.parse(xhr.responseText);
-   console.log(my_JSON_object);
 
 function calculateProduct() {
 	console.log("yoooooo");
