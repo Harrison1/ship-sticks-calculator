@@ -21,7 +21,7 @@
    // console.log(my_JSON_object);
 
  var xhr = new XMLHttpRequest();
-xhr.open("GET", "http://api.example.com/data.json", true);
+xhr.open("GET", "products.json", true);
 xhr.onreadystatechange = function() {
   if (xhr.readyState == 4) {
     // innerText does not let the attacker inject HTML elements.
