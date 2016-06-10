@@ -21,7 +21,7 @@
    // console.log(my_JSON_object);
 
    var xhr = new XMLHttpRequest();
-xhr.onreadystatechange = handleStateChange; // Implemented elsewhere.
+//xhr.onreadystatechange = handleStateChange; // Implemented elsewhere.
 xhr.open("GET", chrome.extension.getURL('/products.json'), true);
 xhr.send();
    var my_JSON_object = JSON.parse(xhr.responseText);
