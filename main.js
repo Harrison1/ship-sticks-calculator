@@ -24,12 +24,22 @@ if (window.XMLHttpRequest) {
 request.open('GET', 'products.json');
 request.onreadystatechange = function() {
 	if ((request.readyState===4) && (request.status===2000)) {
-		var items = JSON.parse(request.response.responseText);
+		var items = JSON.parse(request.responseText);
 		console.log(items + "hello world");
 	}
 }
 
 request.send();
+
+// var request = new XMLHttpRequest();
+// request.open("GET", "products.json", false);
+// request.send(null);
+// request.onreadystatechange = function() {
+//   if ( request.readyState === 4 && request.status === 200 ) {
+//     var my_JSON_object = JSON.parse(request.responseText);
+//     console.log(my_JSON_object);
+//   }
+// }
 
 function calculateProduct() {
 	console.log("yoooooo");
