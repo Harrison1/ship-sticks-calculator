@@ -14,32 +14,11 @@
 //     }
 // }
 
-var request;
-if (window.XMLHttpRequest) {
-	request = new XMLHttpRequest();
-} else {
-	request = new ActiveXObject('Microsoft.XMLHTTP')
-}
-
-request.open('GET', 'products.json');
-request.onreadystatechange = function() {
-	if ((request.readyState===4) && (request.status===2000)) {
-		var items = JSON.parse(request.responseText);
-		console.log(items + "hello world");
-	}
-}
-
-request.send();
-
-// var request = new XMLHttpRequest();
-// request.open("GET", "products.json", false);
-// request.send(null);
-// request.onreadystatechange = function() {
-//   if ( request.readyState === 4 && request.status === 200 ) {
-//     var my_JSON_object = JSON.parse(request.responseText);
-//     console.log(my_JSON_object);
-//   }
-// }
+   var request = new XMLHttpRequest();
+   request.open("GET", "products.json", false);
+   request.send(null);
+   var my_JSON_object = JSON.parse(request.responseText);
+   alert (my_JSON_object.result[0]);
 
 function calculateProduct() {
 	console.log("yoooooo");
