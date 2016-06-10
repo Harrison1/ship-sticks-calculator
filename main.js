@@ -18,7 +18,7 @@
    request.open("GET", "products.json", false);
    request.send(null);
    var my_JSON_object = JSON.parse(request.responseText);
-   alert (my_JSON_object);
+   console.log(my_JSON_object);
 
 function calculateProduct() {
 	console.log("yoooooo");
