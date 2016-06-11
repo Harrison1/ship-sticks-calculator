@@ -126,61 +126,77 @@
         <h2 class='banner'>Ship Sticks Calculator Challenge</h2>
     </div>
     <div class="col-md-12 text-center">
-        <a class="btn btn-primary calculate-btn" href="/" id="ship-now-home">Launch Calculator</a>
+        <a id='launch-btn' class="btn btn-primary calculate-btn" id="ship-now-home">Launch Calculator</a>
     </div>
 </div>
 
 </header>
 
-<div class='container'>
-    <form id='calculator-form'>
-        <div class='row'>
-            <div class='col-md-6'>
-                <label for='length-input'>Length</label><span class='mandatory'> *</span>
-                <input id='length-input' name='length-input' type='number' class='form-control form-margin' autofocus />
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+        <span class="close">×</span>
+        <h2>Calculator</h2>
+    </div>
+    <div class="modal-body">
+        <!--<div class='container'>-->
+            <form id='calculator-form'>
+                <div class='row'>
+                    <div class='col-md-6'>
+                        <label for='length-input'>Length</label><span class='mandatory'> *</span>
+                        <input id='length-input' name='length-input' type='number' class='form-control form-margin' autofocus />
+                    </div>
+                    <div class='col-md-6'>
+                        <label for='width-input'>Width</label><span class='mandatory'> *</span>
+                        <input id='width-input' name='width-input' type='number' class='form-control form-margin' />
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-6'>
+                        <label for='height-input'>Height</label><span class='mandatory'> *</span>
+                        <input id='height-input' name='height-input' type='number' class='form-control form-margin' />
+                    </div>
+                    <div class='col-md-6'>
+                        <label for='weight-input'>Weight</label><span class='mandatory'> *</span>
+                        <input id='weight-input' name='weight-input' type='number' class='form-control form-margin' />
+                    </div>
+                </div>
+            </form>
+       <!-- </div>-->
+       <!-- <div class='container'>-->
+            <div class='row'>
+                <div class='col-md-12 text-center'>
+                    <p id='error'></p>
+                    <button onclick='calculateProduct()' class="btn btn-primary calculate-btn-full" id="calculate-now-button">Calculate</button>
+                </div>
             </div>
-            <div class='col-md-6'>
-                <label for='width-input'>Width</label><span class='mandatory'> *</span>
-                <input id='width-input' name='width-input' type='number' class='form-control form-margin' />
+        <!--</div>-->
+    </div>
+    <div class="modal-footer">
+        <!-- <div class='container'> -->
+            <div class='row'>
+                <div class='col-md-12 text-center'>
+<!--                     <p id='user-length-text'></p>
+                    <p id='user-width-text'></p>
+                    <p id='user-height-text'></p>
+                    <p id='user-weight-text'></p> -->
+                    <p id='answer'></p>
+                </div>
             </div>
-        </div>
-        <div class='row'>
-            <div class='col-md-6'>
-                <label for='height-input'>Height</label><span class='mandatory'> *</span>
-                <input id='height-input' name='height-input' type='number' class='form-control form-margin' />
-            </div>
-            <div class='col-md-6'>
-                <label for='weight-input'>Weight</label><span class='mandatory'> *</span>
-                <input id='weight-input' name='weight-input' type='number' class='form-control form-margin' />
-            </div>
-        </div>
-    </form>
+        <!-- </div> -->
+    </div>
+</div>
 </div>
 
 <div class='container'>
     <div class='row'>
         <div class='col-md-12 text-center'>
-            <button onclick='calculateProduct()' class="btn btn-primary calculate-btn-full" id="calculate-now-button">Calculate</button>
-        </div>
-    </div>
-        <div class='row'>
-        <div class='col-md-12 text-center'>
-            <button onclick='spliceit()' class="btn btn-primary calculate-btn-full" id="calculate-now-button">Splice</button>
+            <p id='body-answer'></p>
         </div>
     </div>
 </div>
 
-<div class='container'>
-    <div class='row'>
-        <div class='col-md-12 text-center'>
-            <p id='user-length-text'></p>
-            <p id='user-width-text'></p>
-            <p id='user-height-text'></p>
-            <p id='user-weight-text'></p>
-        </div>
-    </div>
-</div>
-
+<div id="main-footer-layer"><div class="container"><div class="row inner-container margin-bottom-18"><div class="col-md-9 col-sm-8 col-xs-12"><div class="row"><div class="col-md-4 col-sm-4 col-xs-12"><label class="hidden-xs footer-label"><h6>Ship Sticks</h6></label><label class="visible-xs collapse collapsed" data-target="#ship-sticks-sub-menu" data-toggle="collapse"><h6 class="inline-block">Ship Sticks</h6><i class="fa fa-plus pull-right"></i></label><ul class="list-unstyled collapse sub-menu in" id="ship-sticks-sub-menu"><li><a href="/">Home</a></li><li><a href="/ship">Ship</a></li><li><a href="/track">Track</a></li><li><a href="https://shipsticks.com/blog">News</a></li></ul></div><div class="col-md-4 col-sm-4 col-xs-12"><label class="hidden-xs footer-label"><h6>Partner With Us</h6></label><label class="visible-xs collapse collapsed" data-target="#partners-sub-menu" data-toggle="collapse"><h6 class="inline-block">Partner With Us</h6><i class="fa fa-plus pull-right"></i></label><ul class="list-unstyled collapse sub-menu in" id="partners-sub-menu"><li><a href="http://support.shipsticks.com/customer/en/portal/articles/1970301-becoming-a-partner" target="_blank">Become A Partner</a></li><li><a href="/partners">Our Partners</a></li></ul></div><div class="col-md-4 col-sm-4 col-xs-12"><label class="hidden-xs footer-label"><h6>About Us</h6></label><label class="visible-xs collapse collapsed" data-target="#aboutus-sub-menu" data-toggle="collapse"><h6 class="inline-block">About Us</h6><i class="fa fa-plus pull-right"></i></label><ul class="list-unstyled collapse sub-menu in" id="aboutus-sub-menu"><li><a href="/about">About Us</a></li><li><a href="/reviews">Reviews</a></li><li><a href="/careers">Careers</a></li><li><a href="https://support.shipsticks.com/customer/portal/emails/new">Suggestions       </a></li><li><a href="http://support.shipsticks.com/customer/portal/emails/new">Contact Us</a></li></ul></div></div><div class="row"><div class="col-md-4 col-sm-4 col-xs-12"><label class="hidden-xs footer-label"><h6>Help</h6></label><label class="visible-xs collapse collapsed" data-target="#help-sub-menu" data-toggle="collapse"><h6 class="inline-block">Help</h6><i class="fa fa-plus pull-right"></i></label><ul class="list-unstyled collapse sub-menu in" id="help-sub-menu"><li><a href="/how-it-works">How It Works</a></li><li><a href="/faq">FAQ</a></li><li><a href="http://support.shipsticks.com" target="_blank">Support</a></li><li><a href="/claims">Claims</a></li></ul></div><div class="col-md-4 col-sm-4 col-xs-12"><label class="hidden-xs footer-label"><h6>Account</h6></label><label class="visible-xs collapse collapsed" data-target="#account-sub-menu" data-toggle="collapse"><h6 class="inline-block">Account</h6><i class="fa fa-plus pull-right"></i></label><ul class="list-unstyled collapse sub-menu in" id="account-sub-menu"><li><a href="javascript:void(0)" onclick="$('#login').modal('show');">Login</a></li><li><a href="javascript:void(0);" onclick="$('#registration').modal('show');">Register</a></li></ul></div></div></div><div class="col-md-3 col-sm-4 col-xs-12 text-right-md text-right-lg"><label class="hidden-xs get-in-touch footer-label"><h6>Get In Touch</h6></label><label class="visible-xs collapse collapsed" data-target="#address-sub-menu" data-toggle="collapse"><h6 class="inline-block">Get In Touch</h6><i class="fa fa-plus pull-right"></i></label><itemscope itemtype="http://schema.org/Organization"><div class="collapse sub-menu in" id="address-sub-menu"><itemscope itemtype="http://schema.org/PostalAddress"><address itemprop="address"><streetaddress itemprop="streetAddress">Post Office Box 3565</streetaddress><br><addresslocality itemprop="addressLocality">West Palm Beach, <br>Florida </addresslocality><postalcode itemprop="postalCode">33402</postalcode></address></itemscope><a href="tel:561-4293900" itemprop="telephone">(561) 429-3900</a><br><br><a href="mailto:info@shipsticks.com?subject=hello" itemprop="email">info@shipsticks.com</a><br><br></div></itemscope><ul class="social-icons-wrapper list-unstyled hidden-xs"><li><a class="social-icon facebook" href="//www.facebook.com/ShipSticks"><img alt="Facebook" src="/assets/v4/facebook-aed318e3d7699e341c2a93e3f5e7bf44.png"></a></li><li><a class="social-icon twitter" href="//www.twitter.com/ShipSticks"><img alt="Twitter" src="/assets/v4/twitter-73965f025e106b0939598c648413193b.png"></a></li><li><a class="social-icon google-plus" href="//plus.google.com/+ShipsticksLLC"><img alt="Google plus" src="/assets/v4/google-plus-a69e155f28337271bf1f2e51d94bc111.png"></a></li><li><a class="social-icon linkedin" href="//www.linkedin.com/company/ship-sticks-llc"><img alt="Linkedin" src="/assets/v4/linkedin-452f79b1f4b618ddf47199a93312d2b6.png"></a></li><li><a class="social-icon youtube" href="//www.youtube.com/channel/UClSOWj5Vc6ICxhGTdPVsQcQ"><img alt="Youtube" src="/assets/v4/youtube-4781058c070239cf6fdad9698215ba51.png"></a></li><li><a class="social-icon instagram" href="https://www.instagram.com/shipsticks/"><img alt="Instagram" src="/assets/v4/instagram-67f2d84469532516a9a1aa1a6a6d4a58.png"></a></li></ul></div></div><div class="row inner-container"><div class="hidden-xs"><hr style="border-color:#464646;"><div class="col-md-6 col-xs-12"><h6 class="no-margin-bottom">Newsletter</h6><p class="font-14">Sign up for our mailing list to get the latest updates and offers.</p><br></div><div class="col-md-6 col-xs-12"><form action="" id="newsletter"><div class="form-group"><input class="form-control input-sm inline-block" id="email" name="email" placeholder="Enter your email" style="width:90%;" type="text" value=""><img alt="Newsletter submit" id="newsletter-submit" src="/assets/v4/newsletter_submit-d86dab97681dec37b476d5365ef4666c.png"></div></form></div></div></div></div></div>
 
 <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-without-jquery/0.6.1/bootstrap3/bootstrap-without-jquery.min.js'></script>
 <script type='text/javascript' src='main.js'></script>
