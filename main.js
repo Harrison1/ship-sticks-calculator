@@ -33,22 +33,21 @@ var data = '{ "products": [' +
     '{"name": "Double Snowboard Bag", "type": "Ski", "length": 70, "width": 14, "height": 12, "weight": 40},' +
     '{"name": "Snowboot Bag", "type": "Ski", "length": 25, "width": 15, "height": 7, "weight": 25} ]}';
 
-// var xhr = new XMLHttpRequest();
-// xhr.open("GET", "products.json", true);
-// xhr.onreadystatechange = function() {
-//   if (xhr.readyState == 4) {
-//     // innerText does not let the attacker inject HTML elements.
-//     var my_JSON_object = JSON.parse(xhr.responseText);
-//     console.log(my_JSON_object);
-//     console.log(my_JSON_object.products[0].name);
-//   }
-// }
-// xhr.send();
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "products.json", true);
+xhr.onreadystatechange = function() {
+  if (xhr.readyState == 4) {
+    // innerText does not let the attacker inject HTML elements.
+    var my_JSON_object = JSON.parse(xhr.responseText);
+    console.log(my_JSON_object);
+    console.log(my_JSON_object.products[0].name);
+  }
+}
+xhr.send();
 
 var obj = JSON.parse(data);
 // console.log(obj.products);
 var productArray = [];
-var productSumArray = [];
 var dStrings = ["length","width", "height", "weight"];
 
 function calculate(length, width, height, weight) {
@@ -70,11 +69,9 @@ function calculate(length, width, height, weight) {
 			if(productArray.length >= 1) {
 				var a = parseInt(productArray[0].length)+parseInt(productArray[0].width)+parseInt(productArray[0].height)+parseInt(productArray[0].weight);
 				var index = 0;
-				productSumArray = [];
 
 				for(i=0; i <= productArray.length - 1; i++) {
 						var s = parseInt(productArray[i].length)+parseInt(productArray[i].width)+parseInt(productArray[i].height)+parseInt(productArray[i].weight);
-						productSumArray.push(s);
 						if (s<a) {
 							a=s;
 							index=i;
@@ -188,36 +185,3 @@ function closeModal() {
 			document.getElementById("body-answer").className = "animateclass";
 	}
 }
-
-
-// function removeUnwanted(measurement, element) {
-// 	var i = productArray.length;
-// 	console.log("array length = " + i);
-
-// 	while(i--) {
-// 		console.log("i is at " + i);
-// 		if (measurement > parseInt(productArray[i].width)) {
-// 			productArray.splice(i, 1);
-//         }
-// 	}
-// }
-
-	// i = productArray.length;
-	// console.log("array length = " + i);
-
-	// while(i--) {
-	// 	console.log("i is at " + i);
-	// 	if (height > productArray[i].height) {
-	// 		productArray.splice(i, 1);
- //        }
-	// }
-
-	// i = productArray.length;
-	// console.log("array length = " + i);
-
-	// while(i--) {
-	// 	console.log("i is at " + i);
-	// 	if (weight > productArray[i].weight) {
-	// 		productArray.splice(i, 1);
- //        }
-	// }
