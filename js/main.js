@@ -64,8 +64,6 @@ function calculate(length, width, height, weight) {
 
 			}
 
-			console.log(a);
-			console.log(productArray[index].name);
 			document.getElementById("answer").style.visibility = "visible";
 			document.getElementById("answer").innerHTML = 'use this ' + productArray[index].name;
 			document.getElementById("answer").className = "animateclass";
@@ -98,7 +96,6 @@ function calculateProduct() {
 		dimensions.push(lengthValue, widthValue, heightValue, weightValue);
 
 		calculate(dimensions[0], dimensions[1], dimensions[2], dimensions[3]);
-		console.log(productArray);
 
 	} else {
 		document.getElementById("error").style.visibility = "visible";
