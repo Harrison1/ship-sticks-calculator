@@ -100,6 +100,13 @@
     visibility: hidden;
 }
 
+footer {
+    background: #2e2e2e;
+    color: #fff;
+    font-size: 22px;
+    padding: 20px;
+}
+
 .form-control {
     background-color: #fff;
     background-image: none;

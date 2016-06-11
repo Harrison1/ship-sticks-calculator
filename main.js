@@ -1,18 +1,23 @@
-// var userHasScrolled = false;
-// var divtop = document.getElementById('unscrolled-menu-wrapper');
+var divtop = document.getElementById('unscrolled-menu-wrapper');
+var scrollPosition;  
 
-// document.getElementById("unscrolled-menu-wrapper").style.visibility = "visible";
-// document.getElementById("navbar-menu").style.visibility = "hidden";
-// var scrollPosition = document.body.scrollTop;  
+var productArray = [];
+var dStrings = ["length","width", "height", "weight"];
 
-// window.onscroll = function (e)
-// {
-//     userHasScrolled = true;
-//     scrollPosition = document.body.scrollTop;  
-//     if (scrollPosition >= 0 && scrollPosition <= 20) { 
-//     	navControl();
-//     }
-// }
+document.getElementById("unscrolled-menu-wrapper").style.visibility = "visible";
+document.getElementById("navbar-menu").style.visibility = "hidden";
+
+window.onscroll = function (e)
+{
+    scrollPosition = document.body.scrollTop;  
+    if (scrollPosition > 2) { 
+    	document.getElementById("navbar-menu").style.visibility = "visible";
+    	document.getElementById("unscrolled-menu-wrapper").style.visibility = "hidden";
+    } else {
+    	document.getElementById("unscrolled-menu-wrapper").style.visibility = "visible";
+		document.getElementById("navbar-menu").style.visibility = "hidden";
+    }
+}
 
 var obj;
 var xhr = new XMLHttpRequest();
@@ -23,9 +28,6 @@ xhr.onreadystatechange = function() {
   }
 }
 xhr.send();
-
-var productArray = [];
-var dStrings = ["length","width", "height", "weight"];
 
 function calculate(length, width, height, weight) {
 	if(length>0 && width>0 && height>0 && weight>0) {
