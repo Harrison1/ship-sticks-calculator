@@ -106,7 +106,9 @@ function calculateProduct() {
 		document.getElementById("error").innerHTML = "All fields are required";
 	}
 
-	setTimeout(function() { closeModal(); }, 5000);
+	if(document.getElementById("answer").style.visibility == "visible") {
+		setTimeout(function() { closeModal(); }, 5000);
+	}
 
 }
 
