@@ -21,7 +21,7 @@ window.onscroll = function (e)
 
 var obj;
 var xhr = new XMLHttpRequest();
-xhr.open("GET", "../data/products.json", true);
+xhr.open("GET", "./data/products.json", true);
 xhr.onreadystatechange = function() {
   if (xhr.readyState == 4) {
     obj = JSON.parse(xhr.responseText);
