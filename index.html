@@ -8,12 +8,30 @@
     <meta name="author" content="Harrison McGuire">
 
 	<title>Ship Sticks Calculator</title>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="./fav/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./fav/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./fav/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./fav/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./fav/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./fav/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./fav/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./fav/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./fav/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./fav/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./fav/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./fav/favicon-16x16.png">
+    <link rel="manifest" href="./fav/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./fav/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 	
     <!-- bootstrap style sheet -->
 	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' >
 
     <!-- custom style sheet -->
-    <link rel='stylesheet' href='main.css' >
+    <link rel='stylesheet' href='./css/main.css' >
 
 </head>
 <body>
@@ -23,28 +41,30 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-12">
-                        <ul class="nav navbar-nav pull-right">
-                            <li>
-                                <a class="right-nav" href="http://support.shipsticks.com/customer/en/portal/articles/1970301-becoming-a-partner" target="_blank">Become a partner</a>
-                            </li>
-                            <li>
-                                <p class="right-nav separator">|  </p>
-                            </li>
-                            <li>
-                                <a href="#" class="right-nav">Register</a>
-                            </li>
-                            <li>
-                                <p class="right-nav separator">|  </p>
-                            </li>
-                            <li>
-                                <a href="#" class="right-nav">Login</a>
-                            </li>
-                        </ul>
+                        <div class='container'>
+                            <ul class="nav navbar-nav pull-right">
+                                <li>
+                                    <a class="right-nav" href="http://support.shipsticks.com/customer/en/portal/articles/1970301-becoming-a-partner" target="_blank">Become a partner</a>
+                                </li>
+                                <li>
+                                    <p class="right-nav separator">|  </p>
+                                </li>
+                                <li>
+                                    <a href="#" class="right-nav">Register</a>
+                                </li>
+                                <li>
+                                    <p class="right-nav separator">|  </p>
+                                </li>
+                                <li>
+                                    <a href="#" class="right-nav">Login</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <a href="/" id="centered-navbar-brand"><img alt="Logo" id="logo" src="logo.png"></a>
+                    <a href="/" id="centered-navbar-brand"><img alt="Logo" id="logo" src="./img/logo.png"></a>
                 </div>
             </div>
             <div class="row">
@@ -74,9 +94,9 @@
         </div>
     </div>
 
-    <nav class="navbar navbar-fixed-top navbar-black hidden-lg" id='navbar-menu'>
+    <nav class="navbar navbar-fixed-top navbar-black" id='navbar-menu'>
         <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
+
     <div class='navbar-header page-scroll'>
         <button type'button' class='navbar-toggle' data-toggle='collapse' data-target='#bs-example-navbar-collapse'>
             <span class='sr-only'>Toggle navigation</span>
@@ -84,10 +104,9 @@
             <span class='icon-bar'></span>
             <span class='icon-bar'></span>
         </button>
-        <a class='navbar-brand' href='/'><img class='nav-logo' src='text-logo-dark.png' /></a>
+        <a class='navbar-brand' href='/'><img class='nav-logo' src='./img/text-logo-dark.png' /></a>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class='collapse navbar-collapse' id='bs-example-navbar-collapse'>
         <ul class='nav navbar-nav navbar-right'>
             <li>
@@ -116,9 +135,7 @@
             </li>
         </ul>
     </div>
-    <!-- /.navbar-collapse -->
 </div>
-<!-- /.container-fluid -->
 </nav>
 
 <div class='header-bg'>
@@ -126,59 +143,124 @@
         <h2 class='banner'>Ship Sticks Calculator Challenge</h2>
     </div>
     <div class="col-md-12 text-center">
-        <a class="btn btn-primary calculate-btn" href="/" id="ship-now-home">Launch Calculator</a>
+        <a id='launch-btn' class="btn btn-primary calculate-btn" id="ship-now-home">Launch Calculator</a>
     </div>
 </div>
 
 </header>
 
-<div class='container'>
-    <form id='calculator-form'>
-        <div class='row'>
-            <div class='col-md-6'>
-                <label for='length-input'>Length</label><span class='mandatory'> *</span>
-                <input id='length-input' name='length-input' type='number' class='form-control form-margin' autofocus />
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+        <span class="close">×</span>
+        <h2>Calculator</h2>
+    </div>
+    <div class="modal-body">
+            <form id='calculator-form'>
+                <div class='row'>
+                    <div class='col-md-6'>
+                        <label for='length-input'>Length</label><span class='mandatory'> *</span>
+                        <input id='length-input' name='length-input' type='number' class='form-control form-margin' autofocus />
+                    </div>
+                    <div class='col-md-6'>
+                        <label for='width-input'>Width</label><span class='mandatory'> *</span>
+                        <input id='width-input' name='width-input' type='number' class='form-control form-margin' />
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-6'>
+                        <label for='height-input'>Height</label><span class='mandatory'> *</span>
+                        <input id='height-input' name='height-input' type='number' class='form-control form-margin' />
+                    </div>
+                    <div class='col-md-6'>
+                        <label for='weight-input'>Weight</label><span class='mandatory'> *</span>
+                        <input id='weight-input' name='weight-input' type='number' class='form-control form-margin' />
+                    </div>
+                </div>
+            </form>
+            <div class='row'>
+                <div class='col-md-12 text-center'>
+                    <p id='error'></p>
+                    <button onclick='calculateProduct()' class="btn btn-primary calculate-btn-full" id="calculate-now-button">Calculate</button>
+                </div>
             </div>
-            <div class='col-md-6'>
-                <label for='width-input'>Width</label><span class='mandatory'> *</span>
-                <input id='width-input' name='width-input' type='number' class='form-control form-margin' />
+    </div>
+    <div class="modal-footer">
+            <div class='row'>
+                <div class='col-md-12 text-center'>
+                    <p id='answer'></p>
+                </div>
             </div>
-        </div>
-        <div class='row'>
-            <div class='col-md-6'>
-                <label for='height-input'>Height</label><span class='mandatory'> *</span>
-                <input id='height-input' name='height-input' type='number' class='form-control form-margin' />
-            </div>
-            <div class='col-md-6'>
-                <label for='weight-input'>Weight</label><span class='mandatory'> *</span>
-                <input id='weight-input' name='weight-input' type='number' class='form-control form-margin' />
-            </div>
-        </div>
-    </form>
+    </div>
+</div>
 </div>
 
 <div class='container'>
     <div class='row'>
         <div class='col-md-12 text-center'>
-            <button onclick='calculateProduct()' class="btn btn-primary calculate-btn-full" id="calculate-now-button">Calculate</button>
+            <p id='body-answer'></p>
         </div>
     </div>
 </div>
 
 <div class='container'>
     <div class='row'>
-        <div class='col-md-12 text-center'>
-            <p id='user-length-text'></p>
-            <p id='user-width-text'></p>
-            <p id='user-height-text'></p>
-            <p id='user-weight-text'></p>
+     <div class='col-md-12 text-center'>
+        <h2>Ship Sticks Calculator Challenge</h2>
+        <h4>press the launch calculator button above to launce the calculator and determine what product is right for your shipment</h4>
+        <hr class='space' />
+     </div>
+    </div>
+    <div class='row'>
+        <div class='col-sm-2 text-center'>
+            <img class='step' src='./img/step_1.png' />
+        </div>
+        <div class='col-sm-1 text-center'>
+            <img class='margin-push' src='./img/step_separator.png' />
+        </div>
+        <div class='col-sm-2 text-center'>
+            <img class='step' src='./img/step_2.png' />
+        </div>
+        <div class='col-sm-1 text-center'>
+            <img class='margin-push' src='./img/step_separator.png' />
+        </div>
+        <div class='col-sm-2 text-center'>
+            <img class='step' src='./img/step_3.png' />
+        </div>
+        <div class='col-sm-1 text-center'>
+            <img class='margin-push' src='./img/step_separator.png' />
+        </div>
+        <div class='col-sm-2 text-center'>
+            <img class='step' src='./img/step_4.png' />
         </div>
     </div>
 </div>
 
+<hr class='space' />
+
+<footer class='footer'>
+    <div class='container'>
+        <div class='row'>
+            <div class='col-md-4'>
+                <p>Contact Me</p>
+                <p>Harrison McGuire</p>
+                <p>760-238-6194</p>
+                <p>hmcguire13@gmail.com</p>
+            </div>
+            <div class='col-md-4'>
+                <p>Social</p>
+                <p><a href='https://twitter.com/HarryMcGueeze'>@HarryMcGueeze</a></p>
+                <p><a href='https://www.linkedin.com/in/harrisonmcguire'>LinkedIn</a></p>
+                <p><a href='https://www.youtube.com/channel/UC3QmKYux59jdGJWgMopzWTw'>YouTube</a></p>
+                <p><a href='https://www.twitch.tv/harrisonmcguire'>Twitch</a></p>
+            </div>
+            <div class='col-md-4'>
+            </div>
+        </div>
+    </div>
+</footer>
 
 <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-without-jquery/0.6.1/bootstrap3/bootstrap-without-jquery.min.js'></script>
-<script type='text/javascript' src='main.js'></script>
-<!-- <script type='text/javascript' src='calculator.js'></script>-->
+<script type='text/javascript' src='./js/main.js'></script>
 </body>
 </html>
